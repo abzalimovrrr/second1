@@ -89,7 +89,7 @@ if (num<49){
 } else {console.log('Ok!!!')}
 
  (num===50)? console.log('Ok!!!'):console.log('ERROR!!');
-switch(num){
+switch(num){/* строгое сравнение*/
 case 49:console.log('ERROR!!');break ;
 case 48:console.log('ERROR!!');break ;
 case 51:console.log('Ok!!!');break ;
