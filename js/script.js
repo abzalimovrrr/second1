@@ -76,3 +76,24 @@ const a=prompt('Один из последних просмотренных фи
       numberOfFilms.movies[c]=d;
 
       console.log(numberOfFilms);
+      if (4==9){
+          console.log('Ok!');
+      } else{
+        console.log('Это не так'); 
+      }
+const num=50;
+if (num<49){
+    console.log('ERROR!!');
+} else if(num>100){
+  console.log('Это много'); 
+} else {console.log('Ok!!!')}
+
+ (num===50)? console.log('Ok!!!'):console.log('ERROR!!');
+switch(num){
+case 49:console.log('ERROR!!');break ;
+case 48:console.log('ERROR!!');break ;
+case 51:console.log('Ok!!!');break ;
+case 49:console.log('ERROR!!');break ;
+default:
+console.log('Не в этот раз'); break ;
+}
