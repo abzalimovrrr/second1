@@ -97,3 +97,32 @@ case 49:console.log('ERROR!!');break ;
 default:
 console.log('Не в этот раз'); break ;
 }
+
+let k=50, f=50;
+
+while(k<=55){
+    console.log(k);
+    k++;
+};
+do{ console.log(f);
+    f++;}
+    while(f<=55);
+    for (i=1;i<10;i++){
+        if (i===7){
+            // break;
+            continue;
+        }
+        console.log(i);
+    }
+function calc(a,b){
+
+    return(a+b);
+}
+console.log(calc(6,7));
+console.log(calc(5,7));
+console.log(calc(4,7));
+console.log(calc(3,7));
+console.log(calc(2,7));
+console.log(calc(1,7));
+
+
