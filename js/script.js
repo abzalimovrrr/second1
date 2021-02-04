@@ -127,4 +127,7 @@ console.log(calc(1,7));
 const calc1 = (a,b) => {return a+b};
 console.log(calc1(1,7));
 
+const str1='test';
+console.log(str1[2]);
+
 
