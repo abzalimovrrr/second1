@@ -1,0 +1,839 @@
+<!DOCTYPE html> <html ⚡ lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#007acc">
+<meta name="description" content="Упражнения с использованием циклов for, while, do while на языке программирования C#.">
+<meta name="author" content="programm.top">
+<link rel="icon" href="https://programm.top/images/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="https://programm.top/images/favicon-16x16.png" type="image/png" sizes="16x16">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+<script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-custom>html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{color:#007acc;background-color:transparent;text-decoration:none}a:active,a:hover{outline:0;text-decoration:underline}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-webkit-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{-webkit-box-sizing:border-box;box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}.hidden,[hidden]{display:none}.pure-img{max-width:100%;height:auto;display:block}table{border-collapse:collapse;border-spacing:0;table-layout:fixed;width:100%}table{border:1px solid #eaeaea;table-layout:auto}th{background:#f7f7f7;padding:.5rem}td{padding:.5rem;border:1px solid #eaeaea}.tbl{max-width:400px;text-align:center}.tbl td{border:1px solid #4e4c4c}.pure-menu{-webkit-box-sizing:border-box;box-sizing:border-box}.pure-menu-fixed{position:fixed;left:0;top:0;z-index:3}.pure-menu-item,.pure-menu-list{position:relative}.pure-menu-list{list-style:none;margin-left:20px;padding:0}.pure-menu-item{padding:0;margin:0;height:100%}.pure-menu-heading,.pure-menu-link{display:block;text-decoration:none}.pure-menu-horizontal{width:100%;white-space:nowrap}.pure-menu-horizontal .pure-menu-list{display:inline-block}.pure-menu-horizontal .pure-menu-heading,.pure-menu-horizontal .pure-menu-item,.pure-menu-horizontal .pure-menu-separator{display:inline-block;zoom:1;vertical-align:middle}.pure-menu-item .pure-menu-item{display:block}.pure-menu-children{display:none;position:absolute;left:100%;top:0;margin:0;padding:0;z-index:3}.pure-menu-horizontal .pure-menu-children{left:0;top:auto;width:inherit}.pure-menu-active>.pure-menu-children,.pure-menu-allow-hover:hover>.pure-menu-children{display:block;position:absolute}.pure-menu-has-children>.pure-menu-link:after{padding-left:.5em;content:"\25B8";font-size:small}.pure-menu-horizontal .pure-menu-has-children>.pure-menu-link:after{content:"\25BE"}.pure-menu-scrollable{overflow-y:scroll;overflow-x:hidden}.pure-menu-scrollable .pure-menu-list{display:block}.pure-menu-horizontal.pure-menu-scrollable .pure-menu-list{display:inline-block}.pure-menu-horizontal.pure-menu-scrollable{white-space:nowrap;overflow-y:hidden;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:.5em 0}.pure-menu-horizontal .pure-menu-children .pure-menu-separator,.pure-menu-separator{background-color:#ccc;height:1px;margin:.3em 0}.pure-menu-horizontal .pure-menu-separator{width:1px;height:1.3em;margin:0 .3em}.pure-menu-horizontal .pure-menu-children .pure-menu-separator{display:block;width:auto}.pure-menu-heading{color:#565d64}.pure-menu-link{color:#777}.pure-menu-children{background-color:#fff}.pure-menu-disabled,.pure-menu-heading,.pure-menu-link{padding:.5em 1em}.pure-menu-disabled{opacity:.5}.pure-menu-disabled .pure-menu-link:hover{background-color:transparent}.pure-menu-active>.pure-menu-link,.pure-menu-link:hover{background-color:#eee}body{color:#323232}.pure-img-responsive{max-width:100%;height:auto}.sbmenu,.menu-link{-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;-ms-transition:all .2s ease-out;-o-transition:all .2s ease-out;transition:all .2s ease-out}#layout{position:relative;left:0;padding-left:0}.content{margin:0 auto;padding:0 2em;max-width:1180px;margin-bottom:40px;line-height:1.6em}.header{margin:0 auto;color:#2A2D2E;text-align:center;max-width:1180px;padding:2.5em 2em 0;border-bottom:1px solid #eee}.header h1{margin:1em 0;font-size:2.2em;font-weight:300}.header h2{font-weight:300;color:#323232;padding:0;margin-top:0}.content-subhead{margin:30px 0 20px;font-weight:300;color:#323232}#header{width:300px;position:fixed;z-index:20;margin-left:-300px;height:40px;background-color:#007acc}.sbmenu{margin-left:-300px;width:300px;position:fixed;left:0;bottom:0;z-index:10;background:#252525}.sbmenu a,.sbmenu span{color:#c5c5c5;border:none;padding:.6em 0 .6em .6em;text-decoration:none;user-select:none}.sbmenu .pure-menu,.sbmenu .pure-menu ul{border:none;background:transparent}.sbmenu .pure-menu li a:hover,.sbmenu span:hover{background:#2A2D2E}.sbmenu .pure-menu-selected,.sbmenu .pure-menu-heading{background:#fff;color:#007acc}.sbmenu .pure-menu-heading{font-size:110%;color:#fff;margin:0}.menu-link{position:fixed;display:block;top:0;left:0;background-color:transparent;font-size:10px;z-index:10;height:33px;width:40px;padding-top:7px}.logo{margin:0;position:absolute;top:50%;-ms-transform:translateY(-50%);transform:translateY(-50%);width:100%;text-align:center;color:#fff;font-weight:400}.logo>a{display:inline;padding:5px;color:#fff;text-transform:lowercase}.menu-link:hover,.menu-link:focus{background:#252525}.menu-link div{width:25px;height:3px;background-color:#fff;margin:4px 6px}.logo>a{font-size:21px}.logo>a,.tags a,h1,h2,h3,h4,h5,h6{font-family:marmelad,helvetica,tahoma,geneva,arial,sans-serif;font-weight:400}code{font-family:cousine,menlo,monospace}.menu-footer{width:100%;text-align:center;color:#a5a5a5;font-style:italic;margin:1em 0}#sidebar{width:300px;top:40px;background-color:#252525;height:calc(100vh - 40px);border:none}#sidebar nav{border:none;width:100%}header.pure-menu-item{border:none;background-color:transparent;outline:none}.menu-wrapper{display:block;margin:0;padding:0}.sbar{scrollbar-color:gray #252525;scrollbar-width:thin}.sbar::-webkit-scrollbar{width:7.5px}.sbar::-webkit-scrollbar-track{background:#252525}.sbar::-webkit-scrollbar-thumb{background:gray;border-right:1px solid #252525}.breadcrumb{padding:10px 16px;list-style:none}.breadcrumb li{display:inline;font-size:18px}.breadcrumb li+li:before{padding:8px;color:#333;content:">"}.breadcrumb li a{color:#007acc;text-decoration:none}.breadcrumb li a:hover{color:#007acc;text-decoration:underline}a.pure-menu-link{font-style:italic}span.pure-menu-link{display:flex;justify-content:space-between}span.pure-menu-link::after{content:"\25BC";font-size:small;margin-right:5px}.tags-box{display:block;height:auto;text-align:left}.tags{padding:0;list-style:none;display:inline-block;margin:0}.tags li,.tags a{float:left;height:26px;line-height:24px;position:relative;font-size:14px;margin:2px}.tags a{margin-left:20px;padding:0 10px 0 12px;background:#007acc;color:#fff;text-decoration:none;-moz-border-radius-bottomright:4px;-webkit-border-bottom-right-radius:4px;border-bottom-right-radius:4px;-moz-border-radius-topright:4px;-webkit-border-top-right-radius:4px;border-top-right-radius:4px}.tags span{padding:0;color:#fff}.tags a:before{content:"";float:left;position:absolute;top:0;left:-12px;width:0;height:0;border-color:transparent #007acc transparent transparent;border-style:solid;border-width:12px 12px 14px 0}.tags-header{text-align:center;display:block;padding:1em;margin:auto}.tags a:after{content:"";position:absolute;top:10px;left:0;float:left;width:4px;height:4px;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;background:#fff;-moz-box-shadow:-1px -1px 2px #007acc;-webkit-box-shadow:-1px -1px 2px #007acc;box-shadow:-1px -1px 2px #007acc}.tags a:hover{background:#2A2D2E}.tags a:hover:before{border-color:transparent #2A2D2E transparent transparent}.tags li{display:block;height:auto}amp-accordion section[expanded] span.pure-menu-link::after{content:"\25B2";font-size:small}amp-accordion section:not([expanded]) span.pure-menu-link::after{content:"\25BC";font-size:small}@media (min-width: 900px){.header,.content{padding:0 2em}#layout{padding-left:300px;left:0}.menu-link{display:none}}@media (max-width: 899px){#main{padding-top:40px}#header{width:100%;margin-left:0}table{font-size:.8em}}#menu .sbmenu{margin-left:-300px;width:300px;left:300px;top:40px;overflow-y:auto;-webkit-overflow-scrolling:touch}#sidebar .sbmenu{margin-left:0;position:relative;top:0;width:100%}.lang{margin:20px 0}.lang a{background-color:#fff;padding:.6em;color:#2A2D2E}.lang a:hover{background-color:#007acc;padding:.6em;color:#fff}.mgl0{margin-left:0}pre{padding:1rem;margin:2rem 0;background:#f1efef;border:0;border-radius:2px;line-height:1.15}.notices{margin:2em 0;padding:5px}.notices p{margin-left:10px}.notices.warning{border-left:6px solid #da5551cc;background:#fae2e2}.notices.info{border-left:6px solid #f0b37e;background:#fff2db}.notices.note{border-left:6px solid #6ab0de;background:#e7f2fa}.notices.tip{border-left:6px solid rgba(92,184,92,.8);background:#e6f9e6}.notices.more{border-left:6px solid rgba(92,184,92,.8);background:#e6f9e6}.dc{text-align:center}h1{font-size:2.2em;line-height:1em}h2{font-size:2em}h3{font-size:1.8em}h4{font-size:1.5em}.hltd{background:#fb5b5b}.hljs{display:block;overflow-x:auto;padding:.5em;background:#f1efef;color:#000;-webkit-text-size-adjust:none}.hljs-comment,.hljs-annotation,.diff .hljs-header,.hljs-chunk,.apache .hljs-cbracket{color:#004e00}.hljs-keyword,.hljs-id,.hljs-built_in,.smalltalk .hljs-class,.hljs-winutils,.bash .hljs-variable,.tex .hljs-command,.hljs-request,.hljs-status,.nginx .hljs-title,.xml .hljs-tag,.xml .hljs-tag .hljs-value{color:#00f}.hljs-string,.hljs-title,.hljs-parent,.hljs-tag .hljs-value,.hljs-rule .hljs-value,.ruby .hljs-symbol,.ruby .hljs-symbol .hljs-string,.hljs-template_tag,.django .hljs-variable,.hljs-addition,.hljs-flow,.hljs-stream,.apache .hljs-tag,.hljs-date,.tex .hljs-formula,.coffeescript .hljs-attribute,.hljs-name{color:#a30505}.ruby .hljs-string,.hljs-decorator,.hljs-filter .hljs-argument,.hljs-localvars,.hljs-array,.hljs-attr_selector,.hljs-pseudo,.hljs-pi,.hljs-doctype,.hljs-deletion,.hljs-envvar,.hljs-shebang,.hljs-preprocessor,.hljs-pragma,.userType,.apache .hljs-sqbracket,.nginx .hljs-built_in,.tex .hljs-special,.hljs-prompt{color:#2b91af}.hljs-phpdoc,.hljs-dartdoc,.hljs-javadoc,.hljs-doctag,.hljs-xmlDocTag{color:gray}.hljs-type,.hljs-typename{font-weight:700}.vhdl .hljs-string{color:#667}.vhdl .hljs-literal{color:#a31515}.vhdl .hljs-attribute{color:#00b0e8}.xml .hljs-attribute{color:red}@media(max-width: 1799px){.ads{min-height:100%;min-width:160px;position:absolute;top:120px;left:calc(100vw - 170px)}#main{max-width:calc(100vw - 300px - 170px)}}@media(min-width: 1800px){.ads{min-height:100%;min-width:300px;position:absolute;top:120px;left:calc(100vw - 320px)}#main{max-width:calc(100vw - 300px - 320px)}}@media(max-width: 1580px){.ads{display:none} #main{max-width:100%}} span.dc{display: block;}</style><script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script><link rel="canonical" href="https://programm.top/c-sharp/exercise/loops/">
+<link rel="alternate" hreflang="ru" href="https://programm.top/c-sharp/exercise/loops/"> <link rel="alternate" hreflang="uk" href="https://programm.top/uk/c-sharp/exercise/loops/"> <script type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "https://programm.top/",
+"name": "Cайт о программировании"
+}
+},{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "https://programm.top/c-sharp/",
+"name": "C# .Net"
+}
+},{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "https://programm.top/c-sharp/exercise/",
+"name": "Упражнения"
+}
+},{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "https://programm.top/c-sharp/exercise/loops/",
+"name": "Использование циклов"
+}
+}]
+}
+</script>
+<title>C# .Net: Использование циклов - programm.top</title>
+<link href="https://fonts.googleapis.com/css?family=Marmelad" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cousine" rel="stylesheet">
+</head>
+<body><amp-auto-ads type="adsense" data-ad-client="ca-pub-7499527655487468"></amp-auto-ads>
+<amp-sidebar id="sidebar" layout="nodisplay" side="left" class="sbar">
+<nav toolbar="(min-width: 900px)" toolbar-target="menu">
+<ul class="menu-wrapper">
+<li>
+<div class="sbmenu sbar">
+<div class="pure-menu">
+<ul class="pure-menu-list mgl0">
+<li class="pure-menu-item">
+<amp-accordion>
+<section>
+<header class="pure-menu-item"><span class="pure-menu-link">Руководство</span></header>
+<ul class="pure-menu-list">
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/introduction/" class="pure-menu-link ">Введение в C#</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/program-structure/" class="pure-menu-link ">Структура программы</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/variables/" class="pure-menu-link ">Переменные</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/literals/" class="pure-menu-link ">Литералы</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/data-types/" class="pure-menu-link ">Типы данных</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/arithmetic-operations/" class="pure-menu-link ">Арифметические операции</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/bit-operations/" class="pure-menu-link ">Битовые операции</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/assignment-operator/" class="pure-menu-link ">Оператор присваивания</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/conditional-expressions/" class="pure-menu-link ">Условные выражения</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/conditional-operators/" class="pure-menu-link ">Условные операторы</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/loops/" class="pure-menu-link ">Циклы</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/array/" class="pure-menu-link ">Массивы</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/string/" class="pure-menu-link ">Строки</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/method/" class="pure-menu-link ">Методы</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/params/" class="pure-menu-link ">Параметры массивы</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/method-overloading/" class="pure-menu-link ">Перегрузка методов</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/recursion/" class="pure-menu-link ">Рекурсия</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/enum/" class="pure-menu-link ">Перечисления enum</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/enum-bit-flags/" class="pure-menu-link ">Перечисления как битовые флаги</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial/system-enum/" class="pure-menu-link ">Класс System.Enum</a>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+<li class="pure-menu-item">
+<amp-accordion>
+<section>
+<header class="pure-menu-item"><span class="pure-menu-link">ООП</span></header>
+<ul class="pure-menu-list">
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/tutorial-oop/classes-and-objects/" class="pure-menu-link ">Классы и объекты</a>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+<li class="pure-menu-item">
+<amp-accordion>
+<section expanded>
+<header class="pure-menu-item"><span class="pure-menu-link">Упражнения</span></header>
+<ul class="pure-menu-list">
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/exercise/conditional-operators/" class="pure-menu-link ">Использование условных операторов</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/exercise/loops/" class="pure-menu-link pure-menu-selected">Использование циклов</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/exercise/string/" class="pure-menu-link ">Работа со строками</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/exercise/params/" class="pure-menu-link ">Переменное количество аргументов</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/exercise/method-overloading/" class="pure-menu-link ">Перегруженные методы</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/exercise/recursion/" class="pure-menu-link ">Рекурсивные методы</a>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+<li class="pure-menu-item">
+<amp-accordion>
+<section>
+<header class="pure-menu-item"><span class="pure-menu-link">Алгоритмы</span></header>
+<ul class="pure-menu-list">
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/binary-exponentiation/" class="pure-menu-link ">Быстрое возведение в степень</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/levenshtein-distance/" class="pure-menu-link ">Расстояние Левенштейна</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/damerau-levenshtein-distance/" class="pure-menu-link ">Расстояние Дамерау-Левенштейна</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/arbitrary-precision-arithmetic/" class="pure-menu-link ">Длинная арифметика</a>
+</li>
+<li class="pure-menu-item">
+<amp-accordion>
+<section>
+<header class="pure-menu-item"><span class="pure-menu-link">Алгоритмы сортировки</span></header>
+<ul class="pure-menu-list">
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/array-sort/bogosort/" class="pure-menu-link ">Случайная сортировка</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/array-sort/bubble-sort/" class="pure-menu-link ">Сортировка пузырьком</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/array-sort/shaker-sort/" class="pure-menu-link ">Шейкерная сортировка</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/array-sort/insertion-sort/" class="pure-menu-link ">Сортировка вставками</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/array-sort/stooge-sort/" class="pure-menu-link ">Сортировка по частям</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/array-sort/pancake-sort/" class="pure-menu-link ">Блинная сортировка</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/array-sort/shell-sort/" class="pure-menu-link ">Сортировка Шелла</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/array-sort/merge-sort/" class="pure-menu-link ">Сортировка слиянием</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/array-sort/selection-sort/" class="pure-menu-link ">Сортировка выбором</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/array-sort/quick-sort/" class="pure-menu-link ">Быстрая сортировка</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/array-sort/gnome-sort/" class="pure-menu-link ">Гномья сортировка</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/array-sort/tree-sort/" class="pure-menu-link ">Сортировка бинарным деревом</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/array-sort/comb-sort/" class="pure-menu-link ">Сортировка расческой</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/array-sort/counting-sort/" class="pure-menu-link ">Сортировка подсчетом</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/array-sort/check-array-ordering/" class="pure-menu-link ">Проверка упорядоченности массива</a>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+<li class="pure-menu-item">
+<amp-accordion>
+<section>
+<header class="pure-menu-item"><span class="pure-menu-link">Алгоритмы поиска</span></header>
+<ul class="pure-menu-list">
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/search/linear-search/" class="pure-menu-link ">Последовательный поиск</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/search/binary-search/" class="pure-menu-link ">Бинарный поиск</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/search/longest-common-substring/" class="pure-menu-link ">Поиск наибольшей общей подстроки</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/search/dijkstra-algorithm/" class="pure-menu-link ">Алгоритм Дейкстры</a>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+<li class="pure-menu-item">
+<amp-accordion>
+<section>
+<header class="pure-menu-item"><span class="pure-menu-link">Численные методы</span></header>
+<ul class="pure-menu-list">
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/numerical-methods/simpsons-rule/" class="pure-menu-link ">Метод Симпсона</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/numerical-methods/rectangle-method/" class="pure-menu-link ">Метод прямоугольников</a>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+<li class="pure-menu-item">
+<amp-accordion>
+<section>
+<header class="pure-menu-item"><span class="pure-menu-link">Разложение числа на множители</span></header>
+<ul class="pure-menu-list">
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/integer-factorization/trial-division/" class="pure-menu-link ">Перебор делителей</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/integer-factorization/fermats-factorization/" class="pure-menu-link ">Метод факторизации Ферма</a>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+<li class="pure-menu-item">
+<amp-accordion>
+<section>
+<header class="pure-menu-item"><span class="pure-menu-link">Алгоритмы шифрования</span></header>
+<ul class="pure-menu-list">
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/encryption/atbash/" class="pure-menu-link ">Атбаш</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/encryption/xor-cipher/" class="pure-menu-link ">Шифр XOR</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/encryption/caesar-cipher/" class="pure-menu-link ">Шифр Цезаря</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/encryption/vigenere-cipher/" class="pure-menu-link ">Шифр Виженера</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/encryption/scytale/" class="pure-menu-link ">Скитала</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/encryption/polybius-square/" class="pure-menu-link ">Квадрат Полибия</a>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+<li class="pure-menu-item">
+<amp-accordion>
+<section>
+<header class="pure-menu-item"><span class="pure-menu-link">Системы счисления</span></header>
+<ul class="pure-menu-list">
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/numeral-systems/binary-to-decimal/" class="pure-menu-link ">Перевод из двоичной системы счисления в десятичную</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/numeral-systems/decimal-to-binary/" class="pure-menu-link ">Перевод из десятичной системы счисления в двоичную</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/numeral-systems/ternary-to-decimal/" class="pure-menu-link ">Перевод из троичной системы счисления в десятичную</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/numeral-systems/decimal-to-ternary/" class="pure-menu-link ">Перевод из десятичной системы счисления в троичную</a>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+<li class="pure-menu-item">
+<amp-accordion>
+<section>
+<header class="pure-menu-item"><span class="pure-menu-link">Ряды Тейлора</span></header>
+<ul class="pure-menu-list">
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/taylor-series/taylor-exp/" class="pure-menu-link ">Экспонента</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/taylor-series/taylor-ln-1-plus-x/" class="pure-menu-link ">Натуральный логарифм ln(1&#43;x)</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/taylor-series/taylor-ln-1-minus-x/" class="pure-menu-link ">Натуральный логарифм ln(1-x)</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/taylor-series/taylor-sqrt-1-plus-x/" class="pure-menu-link ">Квадратный корень √(1&#43;x)</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/taylor-series/taylor-sin-x/" class="pure-menu-link ">Синус sin(x)</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/algorithm/taylor-series/taylor-cos-x/" class="pure-menu-link ">Косинус cos(x)</a>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+<li class="pure-menu-item">
+<amp-accordion>
+<section>
+<header class="pure-menu-item"><span class="pure-menu-link">Структуры данных</span></header>
+<ul class="pure-menu-list">
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/data-structures/binary-tree/" class="pure-menu-link ">Бинарное дерево</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/data-structures/graph/" class="pure-menu-link ">Граф</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/data-structures/stack/" class="pure-menu-link ">Стек</a>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+<li class="pure-menu-item">
+<amp-accordion>
+<section>
+<header class="pure-menu-item"><span class="pure-menu-link">Готовые программы</span></header>
+<ul class="pure-menu-list">
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/prime-number/" class="pure-menu-link ">Простое число</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/coprime-integers/" class="pure-menu-link ">Взаимно простые числа</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/armstrong-number/" class="pure-menu-link ">Число Армстронга</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/sieve-eratosthenes/" class="pure-menu-link ">Решето Эратосфена</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/greatest-common-divisor/" class="pure-menu-link ">Нахождение наибольшего общего делителя</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/binary-greatest-common-divisor/" class="pure-menu-link ">Бинарный алгоритм поиска наибольшего общего делителя</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/count-of-digits/" class="pure-menu-link ">Количество цифр</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/matrix-multiplication/" class="pure-menu-link ">Умножение матриц</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/scalar-matrix-multiplication/" class="pure-menu-link ">Умножение матрицы на число</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/vector-matrix-multiplication/" class="pure-menu-link ">Умножение матрицы на вектор</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/words-reverse/" class="pure-menu-link ">Переворачивание слов из строки</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/binary-symmetric-prime-numbers/" class="pure-menu-link ">Поиск бинарно-симметрических простых чисел</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/password-generator/" class="pure-menu-link ">Генератор паролей</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/circles-intersect/" class="pure-menu-link ">Пересечение окружностей</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/console-calc/" class="pure-menu-link ">Консольный калькулятор</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/palindrom/" class="pure-menu-link ">Палиндром</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/rectangle-area-and-perimeter/" class="pure-menu-link ">Площадь и периметр прямоугольника</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/quadratic-equation/" class="pure-menu-link ">Решение квадратного уравнения</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/programs/recursive-functions/" class="pure-menu-link ">Рекурсивные функции</a>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+<li class="pure-menu-item">
+<amp-accordion>
+<section>
+<header class="pure-menu-item"><span class="pure-menu-link">Задачи</span></header>
+<ul class="pure-menu-list">
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/1/" class="pure-menu-link ">Квадрат максимального</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/2/" class="pure-menu-link ">Двузначное из четырёхзначного</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/3/" class="pure-menu-link ">Среднее число</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/4/" class="pure-menu-link ">Вторая цифра числа</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/5/" class="pure-menu-link ">Первая цифра числа</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/6/" class="pure-menu-link ">Удалить четные цифры</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/7/" class="pure-menu-link ">Произведение ненулевых цифр</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/8/" class="pure-menu-link ">Cумма всех цифр числа</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/9/" class="pure-menu-link ">Получить новое число, которое образуется путем исключения средней цифры исходного числа</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/10/" class="pure-menu-link ">Сумма первой половины цифр числа</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/11/" class="pure-menu-link ">Переставить цифры числа так, чтобы образовалось наименьшее число</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/12/" class="pure-menu-link ">Переставить цифры числа так, чтобы образовалось наибольшее число</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/132212/" class="pure-menu-link ">Четные соседи</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/132213/" class="pure-menu-link ">Вывести массив</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/132214/" class="pure-menu-link ">Вывести массив 3</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/132215/" class="pure-menu-link ">Контроперация</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/132216/" class="pure-menu-link ">Больше своих соседей</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/132217/" class="pure-menu-link ">Обменять max и min</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/132218/" class="pure-menu-link ">Два минимума</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/132219/" class="pure-menu-link ">Два наибольших</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/132225/" class="pure-menu-link ">Тасование Ханафуда</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/132229/" class="pure-menu-link ">Седловые точки</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/7829/" class="pure-menu-link ">Задача №7829 Сумма элементов</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/7830/" class="pure-menu-link ">Задача №7830 Наибольший элемент массива</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/7831/" class="pure-menu-link ">Задача №7831 Сумма без максимального</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/7832/" class="pure-menu-link ">Задача №7832 Количество максимальных</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/7833/" class="pure-menu-link ">Задача №7833 Большие среднего арифметического</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/7843/" class="pure-menu-link ">Больше предыдущего</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/7844/" class="pure-menu-link ">Соседи одного знака</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/8544/" class="pure-menu-link ">Квадраты чисел</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/8962/" class="pure-menu-link ">Задача №8962 Крайний самый большой</a>
+</li>
+<li class="pure-menu-item">
+<a href="https://programm.top/c-sharp/problems/8993/" class="pure-menu-link ">Задача №8993 Составить слово</a>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+</ul>
+<div class="lang">
+<div class="pure-menu pure-menu-horizontal menu-item-divided">
+<ul class="pure-menu-list bg">
+<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+<span class="pure-menu-link">Русский</span>
+<ul class="pure-menu-children">
+<li class="pure-menu-item"><a href="https://programm.top/uk/c-sharp/exercise/loops/" class="pure-menu-link">Українська</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="tags-box">
+<a class="tags-header" href="https://programm.top/tags-c-sharp/">Теги</a> <ul class="tags">
+<li><a href="https://programm.top/tags-c-sharp/%D0%B3%D1%80%D0%B0%D1%84/" class="btn"><span>граф</span></a></li>
+<li><a href="https://programm.top/tags-c-sharp/%D0%B8%D0%BD%D1%82%D0%B5%D0%B3%D1%80%D0%B0%D0%BB/" class="btn"><span>интеграл</span></a></li>
+<li><a href="https://programm.top/tags-c-sharp/%D0%BC%D0%B0%D0%BA%D0%BB%D0%BE%D1%80%D0%B5%D0%BD%D0%B0/" class="btn"><span>маклорена</span></a></li>
+<li><a href="https://programm.top/tags-c-sharp/%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D1%8B/" class="btn"><span>массивы</span></a></li>
+<li><a href="https://programm.top/tags-c-sharp/%D0%BC%D0%B0%D1%82%D1%80%D0%B8%D1%86%D1%8B/" class="btn"><span>матрицы</span></a></li>
+<li><a href="https://programm.top/tags-c-sharp/%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B/" class="btn"><span>методы</span></a></li>
+<li><a href="https://programm.top/tags-c-sharp/%D0%BF%D0%BE%D0%B8%D1%81%D0%BA/" class="btn"><span>поиск</span></a></li>
+<li><a href="https://programm.top/tags-c-sharp/%D1%80%D0%B5%D0%BA%D1%83%D1%80%D1%81%D0%B8%D1%8F/" class="btn"><span>рекурсия</span></a></li>
+<li><a href="https://programm.top/tags-c-sharp/%D1%80%D1%8F%D0%B4/" class="btn"><span>ряд</span></a></li>
+<li><a href="https://programm.top/tags-c-sharp/%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0/" class="btn"><span>сортировка</span></a></li>
+<li><a href="https://programm.top/tags-c-sharp/%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8/" class="btn"><span>строки</span></a></li>
+<li><a href="https://programm.top/tags-c-sharp/%D1%82%D0%B5%D0%B9%D0%BB%D0%BE%D1%80%D0%B0/" class="btn"><span>тейлора</span></a></li>
+<li><a href="https://programm.top/tags-c-sharp/%D1%86%D0%B8%D0%BA%D0%BB%D1%8B/" class="btn"><span>циклы</span></a></li>
+</ul>
+</div>
+<div class="menu-footer">Copyright © programm.top</div>
+</div>
+</div>
+</li>
+</ul>
+</nav>
+</amp-sidebar>
+<div id="layout">
+<div id="header">
+<div class="menu-link" role="button" tabindex="0" aria-label="menu" on="tap:sidebar.toggle">
+<div></div>
+<div></div>
+<div></div>
+</div>
+<div class="logo"><a class="pure-menu-heading" href="https://programm.top/">programm.top</a>
+/<a class="pure-menu-heading" href="https://programm.top/c-sharp/">C# .Net</a>
+</div>
+</div>
+<div id="menu"></div>
+<div id="main">
+<div class="header">
+<h1>Использование циклов</h1>
+<div class="breadcrumb-container">
+<ul class="breadcrumb">
+<li>
+<a href="https://programm.top/">Главная</a>
+</li>
+<li>
+<a href="https://programm.top/c-sharp/">C# .Net</a>
+</li>
+<li>
+<a href="https://programm.top/c-sharp/exercise/">Упражнения</a>
+</li>
+<li>
+<span>Использование циклов</span>
+</li>
+</ul>
+</div>
+<div class="tags-box">
+<ul class="tags">
+<li><a href="https://programm.top/tags-c-sharp/%D1%86%D0%B8%D0%BA%D0%BB%D1%8B/" class="btn"><span>циклы</span></a></li></ul>
+</div>
+</div>
+<div class="content">
+<p>Простые упражнения с использованием циклов.</p>
+<h2 id="1-сумма-n-первых-членов-арифметической-прогрессии">1. Сумма N первых членов арифметической прогрессии</h2>
+<p><b>Задание</b>: Найти сумму первых N членов арифметической прогрессии с использованием <strong>цикла for</strong>.</p>
+<amp-accordion>
+<section>
+<header>
+<span>
+Решение
+</span>
+</header>
+<div>
+<pre><code class="language-cs hljs"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        Console.Write(<span class="hljs-string">"n = "</span>);
+        <span class="hljs-keyword">int</span> n = Convert.ToInt32(Console.ReadLine());
+        <span class="hljs-keyword">int</span> sum = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)
+        {
+            sum += i;
+        }
+        Console.WriteLine(<span class="hljs-string">"Сумма первых {0} членов арифметической прогрессии равна {1}"</span>, n, sum);
+        Console.ReadLine();
+    }
+}
+</code></pre>
+</div>
+</section>
+</amp-accordion>
+<h2 id="2-факториал-числа">2. Факториал числа</h2>
+<p><b>Задание</b>: Вычислить факториал числа p(при p &gt; 0), используя <strong>цикл do while</strong>.</p>
+<blockquote>
+<p><strong>Факториал</strong> числа N &ndash; это произведение всех чисел от 1 до N включительно.</p>
+</blockquote>
+<amp-accordion>
+<section>
+<header>
+<span>
+Решение
+</span>
+</header>
+<div>
+<pre><code class="language-cs hljs"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        Console.Write(<span class="hljs-string">"p = "</span>);
+        <span class="hljs-keyword">ulong</span> p = Convert.ToUInt32(Console.ReadLine());
+        <span class="hljs-keyword">ulong</span> i = p;
+        <span class="hljs-keyword">ulong</span> factorial = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">do</span>
+        {
+            factorial = factorial * i;
+            --i;
+        }
+        <span class="hljs-keyword">while</span> (i &gt; <span class="hljs-number">1</span>);
+
+        Console.WriteLine(<span class="hljs-string">$"<span class="hljs-subst">{p}</span>! = <span class="hljs-subst">{factorial}</span>"</span>);
+
+        Console.ReadLine();
+    }
+}
+</code></pre>
+</div>
+</section>
+</amp-accordion>
+<h2 id="3-количество-и-сумма-парных-чисел">3. Количество и сумма парных чисел</h2>
+<p><b>Задание</b>: Посчитать количество и сумму парных чисел в диапазоне от 1 до N.</p>
+<amp-accordion>
+<section>
+<header>
+<span>
+Решение
+</span>
+</header>
+<div>
+<pre><code class="language-cs hljs"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        Console.Write(<span class="hljs-string">"N = "</span>);
+        <span class="hljs-keyword">int</span> N = Convert.ToInt32(Console.ReadLine());
+
+        <span class="hljs-keyword">var</span> count = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">var</span> sum = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">while</span> (N &gt; <span class="hljs-number">0</span>)
+        {
+            <span class="hljs-keyword">if</span> (N % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>)
+            { 
+                count++;
+                sum += N;
+            }
+
+            N -= <span class="hljs-number">1</span>;
+        }
+
+        Console.WriteLine(<span class="hljs-string">"Количество парных {0}; Сумма парных: {1}"</span>, count, sum);
+
+        Console.ReadLine();
+    }
+}
+</code></pre>
+</div>
+</section>
+</amp-accordion>
+<h2 id="4-треугольник">4. Треугольник</h2>
+<p><b>Задание</b>: Вывести на экран, консольного приложения, прямоугольный треугольник из звездочек &ldquo;*&rdquo;, с длиной катета m.</p>
+<p><em>Использовать вложенные циклы</em>.</p>
+<amp-accordion>
+<section>
+<header>
+<span>
+Решение
+</span>
+</header>
+<div>
+<pre><code class="language-cs hljs"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        Console.Write(<span class="hljs-string">"m = "</span>);
+        <span class="hljs-keyword">int</span> m = Convert.ToInt32(Console.ReadLine());
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt;= m; i++)
+        {
+            <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">while</span> (j &lt; i)
+            {
+                Console.Write(<span class="hljs-string">"*"</span>);
+                j++;
+            }          
+
+            Console.WriteLine();
+        }
+        
+        Console.ReadLine();
+    }
+}
+</code></pre>
+</div>
+</section>
+</amp-accordion>
+<h2 id="5-таблица-умножения">5. Таблица умножения</h2>
+<p><b>Задание</b>: Используя вложенные циклы, вывести таблицы умножения от второй до шестой.</p>
+<amp-accordion>
+<section>
+<header>
+<span>
+Решение
+</span>
+</header>
+<div>
+<pre><code class="language-cs hljs"><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+    </span>{
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt; <span class="hljs-number">7</span>; i++)
+        {
+            Console.WriteLine(<span class="hljs-string">$"Таблица умножения на <span class="hljs-subst">{i}</span>"</span>);
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> x = <span class="hljs-number">2</span>; x &lt; <span class="hljs-number">10</span>; x++)
+            {
+                Console.WriteLine(<span class="hljs-string">$"<span class="hljs-subst">{x}</span> * <span class="hljs-subst">{i}</span> = <span class="hljs-subst">{x * i}</span>"</span>);
+            }
+            Console.WriteLine();
+        }
+
+        Console.ReadLine();
+    }
+}
+</code></pre>
+</div>
+</section>
+</amp-accordion>
+<div class="notices more"><p><a href="https://programm.top/c-sharp/tutorial/loops/"><b><i class="fas fa-file-alt"></i>&nbsp;Статья</b></a></p>
+</div>
+<div>
+<amp-ad type="adsense" width="320" height="100" layout="responsive" data-ad-client="ca-pub-7499527655487468" data-ad-slot="1689358175">
+<div overflow></div>
+</amp-ad>
+</div>
+<div class="dc">
+<h3>Смотрите также:</h3>
+<amp-ad width="320" height="120" type="adsense" layout="responsive" data-ad-client="ca-pub-7499527655487468" data-ad-slot="6939490207">
+<div overflow></div>
+</amp-ad>
+</div>	</div>
+</div>
+<div class="ads"><amp-ad type="adsense" height="600" layout="fixed-height" data-ad-client="ca-pub-7499527655487468" data-ad-slot="7398940617">
+<div overflow></div>
+</amp-ad></div>
+</div><amp-analytics type="googleanalytics"><script type="application/json">{"vars":{"account": "UA-80208532-3"},"triggers":{"trackPageview":{"on":"visible","request":"pageview"},"pageTimer":{"on": "timer","timerSpec": {"interval": 15,"maxTimerLength": 600,"immediate": false},"request": "event", "vars": {"eventCategory": "pagetime", "eventAction": "Engaged ${totalEngagedTime}", "eventLabel": "${ampdocUrl}"}}}}</script></amp-analytics></body>
+</html>

@@ -1,6 +1,6 @@
 console.log(2);
 console.log(1);
-let namber=5;
+let namber+=5;
 let namber1=9;
 let namber2=7;
 let namber3=8;
@@ -62,9 +62,9 @@ console.log(answer[2]+`Петя Вася${obj.b}DFDF`);
 const numberOfFilms=+prompt('Сколько фильмов вы уже посмотрели?','');
 const personalMovieDB={/* свойства  */
     count:numberOfFilms,
-    movies:{} /* пустой объект */
-    actors:{}/* пустой объект */
-    genres:[]/* пустой массив */
+    movies:{}, /* пустой объект */
+    actors:{},/* пустой объект */
+    genres:[],/* пустой массив */
     privat:false/* значение  */
 };/* объект */
 const a=prompt('Один из последних просмотренных фильмов?',''),
@@ -130,4 +130,23 @@ console.log(calc1(1,7));
 const str1='test';
 console.log(str1[2]);
 
+Let numberOfFilms;
+function start() {
+numberOfFilms =+prompt('Сколько , уже посмотрели?','');
 
+}
+Const personalMpvieDB = {
+	count: numberOfFilms,
+	movies:{},
+	actors:{},
+genres:[],
+	privat: false
+};
+For (let i=0; i<2; i++){
+Const a = prompt(‘Один из последних просмотренных фильмов?’,’’)},
+ b= prompt(‘На сколько оцените его?’,’’);
+if (a!=null && b !=null && a!=’’ b!=’’ && a, length <50) {
+personalMpvieDB } 
+
+
+    
